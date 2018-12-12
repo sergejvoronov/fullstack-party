@@ -1,0 +1,48 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+        </div>
+        <div class="col-9">
+            <br />
+            <table class="table">
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col">List Issues - [GET] /api/issues/{repositoryOwner}/{repositoryName}/{page}</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        Example: <a href="{{ path('issue_list', {'repositoryOwner': 'symfony', 'repositoryName': 'symfony'}) }}" />
+                        {{ path('issue_list', {'repositoryOwner': 'symfony', 'repositoryName': 'symfony'}) }}
+                        </a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="table">
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Get Issue - [GET] /api/issue/{repositoryOwner}/{repositoryName}/{issueNumber}</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        Example: <a href="{{ path('issue', {'repositoryOwner': 'symfony', 'repositoryName': 'symfony', 'issueNumber': 29574}) }}" />
+                        {{ path('issue', {'repositoryOwner': 'symfony', 'repositoryName': 'symfony', 'issueNumber': 29574}) }}
+                        </a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col">
+        </div>
+    </div>
+</div>
+
+{% endblock %}

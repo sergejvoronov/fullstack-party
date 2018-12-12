@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% block header %}
+        <nav class="navbar navbar-light bg-light">
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                <a href="{{ path('app_logout') }}">Logout</a>
+            {% endif %}
+        </nav>
+    {% endblock %}
+    {% block content %}{% endblock %}
+    {% block footer %}{% endblock %}
+{% endblock %}

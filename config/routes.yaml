@@ -1,0 +1,13 @@
+app_web:
+    resource: ../src/Controller/Web/
+    type: annotation
+    prefix: /
+
+app_api:
+    resource: ../src/Controller/Api/
+    type: annotation
+    prefix: /api
+
+app_logout:
+    path: /logout
+    methods: ['GET']

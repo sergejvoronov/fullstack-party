@@ -1,0 +1,27 @@
+version: "2"
+services:
+    nginx.symfony:
+        container_name: nginx.symfony
+        image: nginx:1.13.10
+        volumes:
+            - .:/code
+            - .docker/nginx/site.conf:/etc/nginx/conf.d/site.conf
+        ports:
+            - 127.0.0.1:$LOCAL_NGINX_DEV_PORT:8000
+
+    php.symfony:
+        container_name: php.symfony
+        build: .docker/php/
+        user: "$LOCAL_USER_ID:$LOCAL_GROUP_ID"
+        environment:
+            - APP_ENV=$APP_ENV
+            - APP_SECRET=$APP_SECRET
+        volumes:
+            - .:/code
+
+    frontend.symfony:
+        container_name: frontend.symfony
+        build: .docker/frontend/
+        user: "$LOCAL_USER_ID:$LOCAL_GROUP_ID"
+        volumes:
+            - .:/code

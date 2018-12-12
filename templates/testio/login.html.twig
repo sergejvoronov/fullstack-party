@@ -1,0 +1,10 @@
+{% extends 'layout.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('build/app.css') }}">
+{% endblock %}
+{% block content %}
+    <form class="form-signin">
+        <a href="{{ path('authorize') }}" class="btn btn-lg btn-success btn-block">Login with GitHub</a>
+    </form>
+{% endblock %}
